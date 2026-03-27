@@ -59,7 +59,7 @@ export interface AlertDispatchResult {
   total_sent: number;
 }
 
-const API_URL = "http://localhost:8000";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 export async function runMLInference(data: SensorData): Promise<MLInferenceResult> {
   try {
