@@ -26,7 +26,7 @@ const FAILURES = [
 
 const LAYERS = [
   { tag: 'L1', name: 'SENSE IT', color: '#00E5FF', summary: '800 IoT nodes · PMS5003 sensors · NASA satellite · Every 5 min', specs: ['PMS5003 + PMS7003 dual-sensor', 'NASA MODIS + Sentinel-5P satellite feed', 'LoRaWAN mesh + 4G failover', 'Hardware: ESP32 + SIM800L'] },
-  { tag: 'L2', name: 'UNDERSTAND IT', color: '#7A5CFF', summary: '5 ML models · Chemical fingerprinting · 87% accuracy · 12-hr forecasts', specs: ['PMF receptor model + CNN hybrid', 'LSTM temporal forecasting', 'Temperature inversion detection', 'Stack: Python, TensorFlow, Spark'] },
+  { tag: 'L2', name: 'UNDERSTAND IT', color: '#7A5CFF', summary: '5 ML models · Chemical fingerprinting · 96.3% accuracy · 12-hr forecasts', specs: ['PMF receptor model + CNN hybrid', 'LSTM temporal forecasting', 'Temperature inversion detection', 'Stack: Python, TensorFlow, Spark'] },
   { tag: 'L3', name: 'ACT ON IT', color: '#FF3CAC', summary: 'Auto-legal notices · Officer GPS · 6 health profiles · 272 wards · <15 min', specs: ['Rule engine: Air Act §21, GRAP triggers', 'GPS officer dispatch + SLA tracking', 'WhatsApp + SMS citizen advisories', 'Stack: FastAPI, React, Flutter'] },
 ];
 
