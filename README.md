@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/PROJECT-VAAYU-C4833A?style=for-the-badge&labelColor=0D0D14&color=C4833A" alt="Project Vaayu" />
+<img src="https://img.shields.io/badge/PROJECT-VAAYU-00F5FF?style=for-the-badge&labelColor=0D0D14&color=00F5FF" alt="Project Vaayu" />
 
 # वायु · PROJECT VAAYU
 
@@ -10,12 +10,12 @@
 
 <br/>
 
-[![Competition](https://img.shields.io/badge/India%20Innovates-2026-C4833A?style=flat-square&labelColor=1A1A2E)](https://indiainnovates.gov.in)
-[![Domain](https://img.shields.io/badge/Domain-Urban%20Solutions-7B68EE?style=flat-square&labelColor=1A1A2E)](/)
-[![Venue](https://img.shields.io/badge/Venue-Bharat%20Mandapam%2C%20Delhi-F5C9A0?style=flat-square&labelColor=1A1A2E)](/)
-[![Date](https://img.shields.io/badge/Date-28%20March%202026-4CAF8C?style=flat-square&labelColor=1A1A2E)](/)
-[![Status](https://img.shields.io/badge/Prototype-Fully%20Working-4CAF8C?style=flat-square&labelColor=1A1A2E)](/)
-[![Research](https://img.shields.io/badge/Backed%20By-5%20Peer--Reviewed%20Papers-E8A85C?style=flat-square&labelColor=1A1A2E)](/)
+[![Competition](https://img.shields.io/badge/India%20Innovates-2026-00F5FF?style=flat-square&labelColor=1A1A2E)](https://indiainnovates.gov.in)
+[![Domain](https://img.shields.io/badge/Domain-Urban%20Solutions-B44FFF?style=flat-square&labelColor=1A1A2E)](/)\
+[![Venue](https://img.shields.io/badge/Venue-Bharat%20Mandapam%2C%20Delhi-FF2D7A?style=flat-square&labelColor=1A1A2E)](/)\
+[![Date](https://img.shields.io/badge/Date-28%20March%202026-00F5FF?style=flat-square&labelColor=1A1A2E)](/)\
+[![Status](https://img.shields.io/badge/Prototype-Fully%20Working-00FF88?style=flat-square&labelColor=1A1A2E)](/)\
+[![Research](https://img.shields.io/badge/Backed%20By-5%20Peer--Reviewed%20Papers-B44FFF?style=flat-square&labelColor=1A1A2E)](/)
 
 <br/>
 
@@ -37,12 +37,15 @@
 - [ML Source Attribution Engine](#ml-source-attribution-engine)
 - [India-Specific Intelligence](#india-specific-intelligence)
 - [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Running Locally](#running-locally)
 - [Research Foundation](#research-foundation)
 - [Feasibility & Demo](#feasibility--demo)
 - [Scalability Roadmap](#scalability-roadmap)
 - [Market & Financials](#market--financials)
 - [Competitive Landscape](#competitive-landscape)
 - [Impact](#impact)
+- [Team](#team)
 - [Competition Context](#competition-context)
 
 ---
@@ -287,30 +290,43 @@ PUNJAB/HARYANA FIRE HOTSPOTS + WIND TOWARD DELHI
 
 ---
 
-### Component 4 — Citizen Health Advisory Module
+### Component 4 — Citizen Health Advisory Module (Live)
+
+The Vaayu AI Inference Sandbox is **fully operational** and wired to the ML backend. It delivers real-time, source-specific, tiered health advisories via:
+
+**6 CPCB Severity Tiers (India Standard):**
+
+| Tier | Label | PM2.5 Range | Action |
+|------|-------|-------------|--------|
+| 0 | Good | 0–50 | Enjoy outdoor activities freely |
+| 1 | Satisfactory | 51–100 | Sensitive individuals limit exertion |
+| 2 | Moderate | 101–200 | Wear cloth mask, limit outdoor time |
+| 3 | Poor | 201–300 | N95 mask mandatory, seal windows |
+| 4 | Very Poor | 301–400 | **Health Emergency** — stay indoors |
+| 5 | Severe | 401+ | **🚨 Public Health Crisis** — evacuate ground floors |
 
 **6 Delivery Channels:**
-1. 📱 **Mobile App** (Android-first, Flutter) — real-time ward AQI + source + hourly forecast + "best time to go out"
-2. 💬 **WhatsApp API** — send "HI" to get your ward's AQI + advisory. No app needed. Reaches 2.5 crore Delhi users.
-3. 📞 **IVR in Hindi** — toll-free number, automated voice reads ward AQI. For elderly, low-literacy, non-smartphone users.
-4. ✉️ **SMS** — triggered only at AQI > 400. 160-character Hindi format.
-5. 🖥️ **Ward LED Display Boards** — Phase 2. One per ward at main chowk.
-6. 🏫 **School + RWA Integration** — automatic push to principals and Resident Welfare Associations.
+1. 📱 **Cyberpunk Web Dashboard** — live ward AQI, source attribution, AI inference sandbox
+2. 💬 **WhatsApp API** — send "HI" to get your ward's AQI + advisory. No app needed.
+3. 📞 **IVR in Hindi** — toll-free number, automated voice reads ward AQI.
+4. ✉️ **SMS via Fast2SMS** — live SMS dispatch to registered contacts on AQI emergencies
+5. 🖥 **Ward LED Display Boards** — Phase 2, one per ward at main chowk
+6. 🏫 **School + RWA Integration** — automatic push to principals and Resident Welfare Associations
 
 **Health profile thresholds:**
 
 | Profile | Alert Threshold | Primary Advisory |
-|---------|----------------|-----------------|
+|---------|----------------|------------------|
+| Asthmatic | AQI 100+ | Keep inhaler accessible, stay indoors |
 | Elderly (60+) | AQI 150+ | Stay indoors, use air purifier |
 | Children (under 12) | AQI 150+ | No outdoor play, close school windows |
-| Asthmatic | AQI 100+ | Keep inhaler accessible, stay indoors |
 | Pregnant | AQI 100+ | Seal windows, avoid outdoor exposure |
 | Outdoor Worker | AQI 200+ | N95 mask, 15-min indoor breaks/hour |
 | General Adult | AQI 300+ | Limit prolonged outdoor exposure |
 
 ---
 
-### Component 5 — Administrator Command Dashboard
+### Component 5 — Administrator Command Dashboard (Live)
 
 **4 role-based access levels:**
 
@@ -322,11 +338,13 @@ PUNJAB/HARYANA FIRE HOTSPOTS + WIND TOWARD DELHI
 | Environment Secretary / CMO | All 272 wards | Executive summary, AI briefing, NCAP progress |
 
 **Dashboard capabilities:**
-- Live 272-ward heatmap updating every 15 minutes
+- Live 272-ward heatmap updating every 15 minutes (interactive Leaflet map)
 - Source attribution overlay (flame / crane / truck / factory icons per ward)
+- AI Inference Sandbox — judges can input live sensor data and watch the ensemble model output attribution + health advisories in real time
 - Enforcement Action Centre with digital signature dispatch
 - GRAP Management Module — ward-level stage control (not city-wide)
 - Predictive Alert Panel — "Tonight's High-Risk Wards" updated at 3 PM daily
+- Live Ward Intelligence Ticker — scrolling real-time ward events pinned to viewport
 - Auto-generated PDF reports (daily / weekly / monthly)
 - Full audit trail — immutable, RTI-compliant, exportable as court-ready evidence
 
@@ -334,32 +352,41 @@ PUNJAB/HARYANA FIRE HOTSPOTS + WIND TOWARD DELHI
 
 ## ML Source Attribution Engine
 
-### The Five Models
+### The Actual Deployed Models
+
+The `vaayu-ml/` directory contains two trained, serialised production models:
 
 ```python
-# Model 1: Source Classification
+# Model 1 (Deployed): Source Classification — Random Forest
 RandomForestClassifier(
     n_estimators=200,
-    features=["pm25", "pm10", "no2", "co", "so2", "o3",
-              "wind_speed", "wind_direction", "hour", "month"],
-    target="source_type",  # 5 classes
+    features=["pm25", "pm10", "no2", "so2", "co",
+              "wind_speed", "temperature", "month", "hour",
+              "ratio_pm25_pm10", "ratio_so2_no2", "ratio_co_no2"],
+    target="source_type",  # 4 classes: biomass_burning, vehicular,
+                          #            construction_dust, industry
     accuracy=0.87+
 )
 
-# Model 2: AQI Forecasting
+# Model 2 (Deployed): Dispersion Forecasting — XGBoost / GBM
+GradientBoostingRegressor(
+    features=["month", "hour", "wind_speed", "wind_direction",
+              "temperature", "pressure", "pm10", "fire_points_100km"],
+    output="downstream_ward_pm25_forecast"
+)
+
+# Meta-Learner: Blended ensemble
+meta_pm25 = (sensor_pm25 × 0.7) + (dispersion_pm25 × 0.3)
+```
+
+### Additional Planned Models (Phase 2)
+
+```python
+# Model 3: AQI Forecasting
 LSTMNetwork(
     sequence_length=24,      # 24 hours of 5-min readings
     forecast_horizon=144,    # 12 hours ahead (5-min intervals)
-    features=["pm25", "pm10", "no2", "wind", "humidity", "temp",
-              "deweathered_residual"],   # Verma et al. deweathering
     rmse=18  # µg/m³
-)
-
-# Model 3: Dispersion Modelling
-GradientBoostingRegressor(
-    features=["source_location", "wind_vector", "boundary_layer_height",
-              "temperature_gradient", "terrain"],
-    output="downstream_ward_risk_scores"
 )
 
 # Model 4: Satellite Source Detection
@@ -420,8 +447,49 @@ Vaayu's CNN satellite model + citizen report fusion maps these invisible sources
 
 ## Tech Stack
 
+### Frontend (Production)
+
 ```
-HARDWARE LAYER
+FRONTEND
+├── React 18 + TypeScript        Core UI framework
+├── Vite 8                       Build tooling (HMR, optimised bundler)
+├── TailwindCSS 3                Utility-first styling
+├── shadcn/ui + Radix UI         Headless component primitives
+├── Framer Motion                Page animations + scroll-reveal effects
+├── React Leaflet + Leaflet      Interactive 272-ward AQI heatmap
+├── Recharts                     Data visualisation (dispersion charts)
+├── TanStack Query               Server-state management
+├── React Router DOM v6          Client-side routing
+└── Lucide React                 Icon system
+
+DESIGN SYSTEM
+├── Cyberpunk neon palette       Cyan (#00F5FF) / Purple (#B44FFF) / Pink (#FF2D7A)
+├── Holographic glassmorphism    Backdrop-filter blur panels
+├── GPU-accelerated animations   CSS transforms + will-change
+└── Viewport-pinned live ticker  Real-time ward intel stream
+```
+
+### ML Backend (Production)
+
+```
+BACKEND
+├── FastAPI (Python)             REST API server (inference + alert dispatch)
+├── Uvicorn                      ASGI server
+├── scikit-learn                 Random Forest source classification
+├── XGBoost                      Dispersion forecasting (GBM)
+├── joblib                       Model serialisation / loading
+├── Pydantic v2                  Request/response validation
+└── Fast2SMS API                 Live SMS dispatch to ward contacts
+
+ML MODELS (Deployed)
+├── vaayu-ml/models/model2_rf/rf_source_model.pkl   Source classifier
+└── vaayu-ml/models/model3_gbm/xgb_dispersion_model.pkl   Dispersion forecaster
+```
+
+### Data, Infrastructure & Hardware (Roadmap)
+
+```
+HARDWARE LAYER (Planned)
 ├── PMS5003          Laser particle counter (PM2.5, PM10)
 ├── MQ-7 / MQ-135   Electrochemical gas sensors (CO, NO₂, SO₂)
 ├── ESP32            Microcontroller + WiFi/BT
@@ -429,38 +497,19 @@ HARDWARE LAYER
 ├── 10W Solar        Primary power
 └── 20Ah LiFePO4    72-hour backup battery
 
-DATA PIPELINE
+DATA PIPELINE (Planned)
 ├── MQTT             IoT messaging protocol (Eclipse Mosquitto broker)
 ├── Apache Kafka     Distributed message queue
 ├── Apache Spark     Real-time stream processing
 └── InfluxDB         Time-series database
 
-ML / AI
-├── Python 3.11+     Core language
-├── scikit-learn     Random Forest, Gradient Boosting, Isolation Forest
-├── TensorFlow 2.x   LSTM neural networks
-├── PyTorch          CNN satellite imagery models
-└── SHAP             Model interpretability (officer-facing audit)
-
-BACKEND
-├── FastAPI          REST API (Python)
-├── PostgreSQL       Relational data (notices, officers, audit trail)
-├── Redis            Caching + real-time pub/sub
-└── Celery           Async task queue (notice generation, alerts)
-
-FRONTEND / APPS
-├── React.js         Admin dashboard
-├── Mapbox GL JS     Ward heatmap visualisation
-├── Flutter          Citizen mobile app (Android + iOS)
-└── Twilio           WhatsApp API + IVR Hindi integration
-
-CLOUD INFRASTRUCTURE
+CLOUD (Planned)
 ├── AWS IoT Core     Managed MQTT broker at scale
 ├── AWS Lambda       Serverless ML inference
 ├── AWS S3           Satellite imagery storage
 └── AWS CloudFront   CDN for dashboard
 
-DATA SOURCES (All Free)
+FREE DATA SOURCES
 ├── NASA EarthData      MODIS aerosol data
 ├── ESA Copernicus      Sentinel-5P atmospheric data
 ├── IMD Open Data       Weather and radiosonde
@@ -469,6 +518,109 @@ DATA SOURCES (All Free)
 ```
 
 > **Zero proprietary licensing costs.** Every layer uses open-source or free-tier services.
+
+---
+
+## Project Structure
+
+```
+Vaayu/
+├── src/                          Frontend (React + TypeScript)
+│   ├── pages/
+│   │   └── Index.tsx             Main 9-section parallax journey page
+│   ├── components/
+│   │   ├── AIDashboard.tsx       AI Inference Sandbox (wired to FastAPI)
+│   │   ├── InteractiveAQIMap.tsx React-Leaflet 272-ward heatmap
+│   │   ├── Navbar.tsx            Sticky cyberpunk navigation bar
+│   │   ├── ScrollReveal.tsx      Scroll-triggered entrance animations
+│   │   └── graphics/
+│   │       ├── CinematicBackground.tsx  Animated particle canvas
+│   │       ├── DelhiHeatmap.tsx         SVG ward heatmap
+│   │       ├── GovernancePipeline.tsx   8-step enforcement pipeline viz
+│   │       ├── ImpactCounters.tsx       Animated stat counters
+│   │       ├── IndiaPhaseMap.tsx        Phase rollout SVG map
+│   │       ├── LiveTicker.tsx           Viewport-pinned alert stream
+│   │       ├── RadarChart.tsx           Competitive radar chart
+│   │       └── CostBarChart.tsx         Cost comparison chart
+│   ├── data/
+│   │   └── wardData.ts           Demo data for 5 Delhi wards
+│   └── index.css                 Global cyberpunk design system
+│
+├── vaayu-ml/                     ML Backend (Python + FastAPI)
+│   ├── api/
+│   │   └── main.py               FastAPI server with 5 endpoints
+│   ├── models/
+│   │   ├── model2_rf/            Random Forest source classifier (.pkl)
+│   │   └── model3_gbm/           XGBoost dispersion model (.pkl)
+│   ├── features/
+│   │   └── build_features.py     Feature engineering pipeline
+│   └── data/                     Training datasets
+│
+├── data/                         Raw Delhi AQI data (3 years)
+├── index.html                    App entry point
+├── vite.config.ts                Vite configuration
+├── tailwind.config.ts            Tailwind + cyberpunk theme config
+└── package.json                  Dependencies
+```
+
+---
+
+## Running Locally
+
+### Frontend
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server (opens at http://localhost:5173)
+npm run dev
+```
+
+### ML Backend
+
+```bash
+# Navigate to the ML directory
+cd vaayu-ml
+
+# Install Python dependencies
+pip install fastapi uvicorn scikit-learn xgboost joblib pandas requests pydantic
+
+# Start the inference server (http://localhost:8000)
+python api/main.py
+```
+
+### API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/infer/ward` | Run 2-model ensemble inference for a ward |
+| `POST` | `/alerts/dispatch` | Trigger SMS alerts to all registered contacts via Fast2SMS |
+| `GET` | `/alerts/log` | View alert history (last 20 dispatches) |
+| `GET` | `/alerts/contacts` | View registered ward contact list |
+| `GET` | `/health` | Server health + model load status |
+
+**Sample inference request:**
+```bash
+curl -X POST http://localhost:8000/infer/ward \
+  -H "Content-Type: application/json" \
+  -d '{
+    "ward_id": "W001",
+    "month": 11,
+    "hour": 23,
+    "temperature": 14.2,
+    "humidity": 76.5,
+    "pressure": 1012.3,
+    "wind_speed": 1.8,
+    "wind_direction": 270,
+    "pm25": 287,
+    "pm10": 340,
+    "no2": 45.2,
+    "so2": 12.1,
+    "co": 3.4,
+    "fire_points_100km": 24
+  }'
+```
 
 ---
 
@@ -529,10 +681,11 @@ Validates: digital twin architecture (Phase 5 roadmap), immutable blockchain aud
 
 | Demo | Description |
 |------|-------------|
-| **Live Dashboard** | 5 Delhi wards (Anand Vihar, Rohini Sector 16, Okhla Phase 2, Chandni Chowk, R.K. Puram) with 3 years of historical data replayed in real-time |
-| **ML Source Attribution** | Live demo — judges can change pollutant input values and watch the source classification change with confidence scores |
+| **Live Cyberpunk Dashboard** | Full 9-section parallax journey website running live at the booth |
+| **Interactive Leaflet Heatmap** | 5 Delhi wards (Anand Vihar, Rohini Sector 16, Okhla Phase 2, Chandni Chowk, R.K. Puram) with 3 years of historical data |
+| **AI Inference Sandbox** | Judges type in live sensor values → Random Forest + XGBoost ensemble outputs source classification + confidence scores + health advisories in real time |
+| **Live SMS Dispatch** | One click triggers real SMS alerts to all 6 team members via Fast2SMS API, visible on screen |
 | **Auto-Notice Generation** | Trigger a burning event → watch a Sec 15 DPCR enforcement notice generate in under 30 seconds |
-| **Citizen Advisory** | Live Flutter app on phone showing health profile personalisation and ward-specific alerts |
 | **Predictive Alert** | Last year's Diwali data showing 12-hour advance AQI spike prediction for affected wards |
 
 ### Build Cost vs. Alternatives
@@ -662,12 +815,27 @@ The longer we run, the wider the accuracy gap vs. all competitors.
 
 ---
 
+## Team
+
+**Indo Innovatorz** — India Innovates 2026
+
+| Name | Role |
+|------|------|
+| Yashaswi Goel | Team Lead |
+| Akshi Budhiraja | Member |
+| Kushagra | Member |
+| Nakul Khera | Member |
+| Nidhish Bansal | Member |
+| Tishika Jaiswal | Member |
+
+---
+
 ## Competition Context
 
-**Competition:** India Innovates 2026 — World's Largest Civic Tech Hackathon
-**Domain:** Urban Solutions (Domain 1)
-**Venue:** Bharat Mandapam, New Delhi
-**Date:** 28 March 2026
+**Competition:** India Innovates 2026 — World's Largest Civic Tech Hackathon\
+**Domain:** Urban Solutions (Domain 1)\
+**Venue:** Bharat Mandapam, New Delhi\
+**Date:** 28 March 2026\
 **Format:** No coding on final day. Exhibition booth. Judges evaluate on-ground in real time.
 
 **Prizes:**
