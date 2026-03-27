@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── Neon Cyberpunk Palette ── */
+    --background: 230 25% 5%;
+    --foreground: 210 40% 98%;
+    --card: 230 25% 10%;
+    --card-foreground: 210 40% 98%;
+    --card-elevated: 230 25% 14%;
+    --purple-glow: 260 80% 60%;
+
+    /* Primary = Neon Cyan */
+    --primary: 187 100% 45%;
+    --primary-foreground: 230 25% 5%;
+    --primary-light: 187 100% 60%;
+    --peach: 330 100% 72%;
+    --chart-purple: 260 82% 67%;
+
+    /* Secondary / Muted */
+    --secondary: 230 25% 12%;
+    --secondary-foreground: 220 15% 75%;
+    --muted: 230 25% 14%;
+    --muted-foreground: 220 12% 50%;
+    --accent: 260 80% 25%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Status (Neon-Coded) */
+    --status-good: 145 100% 55%;
+    --status-bad: 0 100% 62%;
+    --status-warning: 30 100% 55%;
+
+    /* Infrastructure */
+    --popover: 230 25% 10%;
+    --popover-foreground: 210 40% 98%;
+    --border: 187 100% 45% / 0.15;
+    --input: 230 25% 15%;
+    --ring: 187 100% 45%;
+    --radius: 1rem;
+    --destructive: 0 100% 62%;
+    --destructive-foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-foreground;
+    background-color: #080810;
+    background-image: url('/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    pointer-events: none;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', 'DM Sans', sans-serif;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+  code, .mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   GLASSMORPHISM WITH NEON BORDERS
+   ═══════════════════════════════════════════ */
+.glass-panel {
+  background: rgba(20, 28, 50, 0.55);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  box-shadow:
+    0 8px 32px rgba(0, 229, 255, 0.06),
+    0 4px 16px rgba(122, 92, 255, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+}
+
+.glass-card {
+  background: rgba(22, 30, 55, 0.5);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(0, 229, 255, 0.18);
+  box-shadow:
+    0 4px 24px rgba(0, 229, 255, 0.05),
+    0 2px 12px rgba(122, 92, 255, 0.03);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  border-radius: var(--radius);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 16px 48px rgba(0, 229, 255, 0.15),
+    0 0 30px rgba(122, 92, 255, 0.1);
+  border-color: rgba(0, 229, 255, 0.35);
+  background: rgba(28, 36, 60, 0.65);
+}
+
+/* Neon glow card variant */
+.neon-card {
+  background: rgba(18, 22, 45, 0.55);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(122, 92, 255, 0.22);
+  box-shadow:
+    0 0 20px rgba(0, 229, 255, 0.06),
+    0 4px 24px rgba(122, 92, 255, 0.04);
+  border-radius: var(--radius);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.neon-card:hover {
+  border-color: rgba(122, 92, 255, 0.45);
+  box-shadow:
+    0 0 40px rgba(122, 92, 255, 0.18),
+    0 0 60px rgba(0, 229, 255, 0.08),
+    0 12px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+/* ═══════════════════════════════════════════
+   GRADIENT TEXT
+   ═══════════════════════════════════════════ */
+.gradient-text {
+  background: linear-gradient(135deg, #00E5FF 0%, #7A5CFF 50%, #FF3CAC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #FF5F3C 0%, #FF3CAC 50%, #7A5CFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glowing text for critical values */
+.glow-text-cyan {
+  color: #00E5FF;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.6), 0 0 30px rgba(0, 229, 255, 0.3);
+}
+
+.glow-text-red {
+  color: #FF5F3C;
+  text-shadow: 0 0 10px rgba(255, 95, 60, 0.6), 0 0 30px rgba(255, 95, 60, 0.3);
+}
+
+.glow-text-green {
+  color: #39FF14;
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 30px rgba(57, 255, 20, 0.25);
+}
+
+.glow-text-purple {
+  color: #7A5CFF;
+  text-shadow: 0 0 10px rgba(122, 92, 255, 0.6), 0 0 30px rgba(122, 92, 255, 0.3);
+}
+
+/* ═══════════════════════════════════════════
+   NEON BUTTONS
+   ═══════════════════════════════════════════ */
+.btn-neon {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #00E5FF, #7A5CFF, #FF3CAC);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+}
+.btn-neon:hover {
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.5), 0 0 80px rgba(122, 92, 255, 0.3);
+}
+.btn-neon::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+}
+.btn-neon:hover::after {
+  animation: shimmer-sweep 0.8s ease-out;
+}
+
+.btn-outline-neon {
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  color: #00E5FF;
+  background: rgba(0, 229, 255, 0.05);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+.btn-outline-neon:hover {
+  background: rgba(0, 229, 255, 0.15);
+  border-color: rgba(0, 229, 255, 0.7);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════ */
+@keyframes shimmer-sweep {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 229, 255, 0.15); }
+  50% { box-shadow: 0 0 40px rgba(0, 229, 255, 0.3), 0 0 60px rgba(122, 92, 255, 0.15); }
+}
+
+@keyframes dataFlicker {
+  0%, 95%, 100% { opacity: 1; }
+  96% { opacity: 0.7; }
+  97% { opacity: 1; }
+  98% { opacity: 0.85; }
+}
+
+@keyframes ambientPulse {
+  0% { opacity: 0.2; transform: scale(1); }
+  100% { opacity: 0.4; transform: scale(1.1); }
+}
+
+@keyframes fadeInSmooth {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(0, 229, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0); }
+}
+
+@keyframes alert-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes dash-travel {
+  to { stroke-dashoffset: -20; }
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes shimmer {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.1; }
+}
+
+.holographic-noise {
+  position: relative;
+  overflow: hidden;
+}
+
+.holographic-noise::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    rgba(0, 229, 255, 0.03) 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 1;
+  animation: scanline 8s linear infinite;
+}
+
+/* ═══════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════ */
+
+/* Cursor glow following mouse */
+.cursor-follower {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(0, 229, 255, 0.5);
+  box-shadow:
+    0 0 6px rgba(0, 229, 255, 0.6),
+    0 0 14px rgba(0, 229, 255, 0.3),
+    0 0 28px rgba(122, 92, 255, 0.15);
+  pointer-events: none;
+  z-index: 9998;
+  will-change: transform;
+  mix-blend-mode: screen;
+}
+
+.cursor-follower::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0, 229, 255, 0.35);
+  pointer-events: none;
+}
+
+.fade-in {
+  animation: fadeInSmooth 0.8s ease-out both;
+}
+.fade-in.delay-150 {
+  animation-delay: 150ms;
+}
+
+.pulse-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #00E5FF;
+  animation: pulse-ring 2s infinite;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.2), rgba(122, 92, 255, 0.2), transparent);
+}
+
+/* Film grain overlay */
+.grain-overlay::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Data panel live flicker */
+.data-flicker {
+  animation: dataFlicker 4s infinite;
+}
+
+/* Floating animation */
+.float-subtle {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Pulsing glow border */
+.pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Hex grid removed for clean look */
+.hex-grid-bg {
+  background: transparent;
+}
+
+/* ═══════════════════════════════════════════
+   LEAFLET MAP OVERRIDES
+   ═══════════════════════════════════════════ */
+.leaflet-popup-content-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 12px !important;
+  padding: 0 !important;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+}
+.leaflet-popup-tip {
+  background: #0a0c14 !important;
+  border: 1px solid rgba(0,229,255,0.15);
+}
+.leaflet-container {
+  background: #080810 !important;
+  border-radius: 1.5rem;
+}
+.leaflet-control-zoom {
+  border: none !important;
+}
+.leaflet-control-zoom a {
+  background: rgba(10,12,20,0.8) !important;
+  color: #00E5FF !important;
+  border: 1px solid rgba(0,229,255,0.2) !important;
+  backdrop-filter: blur(8px);
+}
+.leaflet-control-zoom a:hover {
+  background: rgba(0,229,255,0.15) !important;
+}
+
+/* Global smooth transitions */
+a, button {
+  transition: all 0.25s ease-out;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
